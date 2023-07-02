@@ -1,0 +1,51 @@
+<%- include('userHeader') %> 
+
+
+    <!-- Page Header Start -->
+    <div class="container-fluid bg-secondary mb-5">
+        <div class="d-flex flex-column align-items-center justify-content-center" style="min-height: 300px">
+            <h1 class="font-weight-semi-bold text-uppercase mb-3">Checkout</h1>
+            <div class="d-inline-flex">
+                <p class="m-0"><a href="">Home</a></p>
+                <p class="m-0 px-2">-</p>
+                <p class="m-0">Checkout</p>
+            </div>
+        </div>
+    </div>
+    <!-- Page Header End -->
+
+
+    <!-- Checkout Start -->
+    <div class="container-fluid pt-5">
+        <div class="row px-xl-5">
+            <div class="col-lg-12 justify-content-center d-flex">
+                <div class="mb-4">
+                    <h4 class="font-weight-semi-bold mb-4">login</h4>
+                <form action="/user/userLoginCheck" method="post">
+                    <div class="row">
+                        
+                        <div class="col-md-12 form-group">
+                            <label>E-mail</label>
+                            <input class="form-control" type="text" name="email" placeholder="example@email.com">
+                        </div>
+
+                        <div class="col-md-12 form-group">
+                            <label>password</label>
+                            <input class="form-control" type="text" name="password" placeholder="enter password">
+                        </div>
+
+
+                        <div class="col-md-12 form-group">
+                            <input class="form-control"   type="submit" name="submit" value="login">
+                        </div>
+                    </div>
+                </form>
+                </div>
+             
+            </div>
+
+        </div>
+    </div>
+    <!-- Checkout End -->
+
+<%- include('userFooter') %>

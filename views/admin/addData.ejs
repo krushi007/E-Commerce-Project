@@ -1,0 +1,70 @@
+<%- include('header') %>
+
+            <div class="main-panel">
+                <div class="content-wrapper">
+                    <div class="row">
+                        <div class="col-12 grid-margin stretch-card">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4 class="card-title">Basic form elements</h4>
+                                    <% if(flash.success && flash.success.length > 0) { %>  
+                                        <p class="card-description alert alert-success">
+                                            <%= flash.success %>
+                                        </p>
+                                    <% } %>
+
+                                    <% if(flash.error && flash.error.length > 0) { %>  
+                                        <p class="card-description alert alert-danger">
+                                            <%= flash.error %>
+                                        </p>
+                                    <% } %>
+                                    <form class="forms-sample" action="/insertAdmin" method="post"
+                                        enctype="multipart/form-data">
+                                        <div class="form-group">
+                                            <label for="exampleInputName1">First Name</label>
+                                            <input type="text" class="form-control" name='fname' id="exampleInputName1"
+                                                placeholder="First Name">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleInputName1">Last Name</label>
+                                            <input type="text" class="form-control" name='lname' id="exampleInputName1"
+                                                placeholder="Last name">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleInputEmail3">Email address</label>
+                                            <input type="email" class="form-control" name="email"
+                                                id="exampleInputEmail3" placeholder="Email">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleInputPassword4">Password</label>
+                                            <input type="password" class="form-control" name="password"
+                                                id="exampleInputPassword4" placeholder="Password">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleSelectGender">Gender</label><br>
+                                            <input type="radio" name="gender" value="male" id="">male
+                                            <input type="radio" name="gender" value="female" id="">female
+                                        </div>
+                                        <div class="form-group">
+                                            <label>File upload</label>
+                                            <input type="file" name="profile">
+                                            
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleInputCity1">hobby</label>
+                                            <input type="checkbox" class="form-control" name="hobby[]"
+                                                id="exampleInputCity1" value="gaming">gaming
+                                            <input type="checkbox" class="form-control" name="hobby[]"
+                                                id="exampleInputCity1" value="music">music
+                                            <input type="checkbox" class="form-control" name="hobby[]"
+                                                id="exampleInputCity1" value="reading">reading
+                                        </div>
+
+                                        <input type="submit" class="btn btn-primary mr-2" name="submit" id="">
+
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
+<%- include('footer') %>

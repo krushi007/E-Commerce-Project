@@ -1,0 +1,37 @@
+<%- include('header') %>
+            <!-- partial -->
+            <div class="main-panel">
+                <div class="content-wrapper">
+                    <div class="row">
+                        <div class="col-12 grid-margin stretch-card">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4 class="card-title"> Category Form</h4>
+                                    <p class="card-description">
+                                        <%= flash.success %>
+                                    </p>
+                                    <p class="card-description">
+                                        <%= flash.error %>
+                                    </p>
+                                    <form class="forms-sample" action="/addSubCategory/insertSubCategory" method="post">
+
+                                        <select name="categoryId" id="">
+                                            <option value="">--select--</option>
+                                            <% for(var ca of categoryData) {%>
+                                            <option value="<%= ca.id %>"><%= ca.categoryName %></option>
+                                            <% } %>
+                                        </select>
+
+                                        <div class="form-group">
+                                            <label for="exampleInputName1">Sub Category Name</label>
+                                            <input type="text" class="form-control" name='subCategoryName' id="exampleInputName1"
+                                                placeholder="SubCategory Name">
+                                        </div>
+                                        <input type="submit" class="btn btn-primary mr-2" name="submit" id="">
+
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
+                        <%- include('footer') %>

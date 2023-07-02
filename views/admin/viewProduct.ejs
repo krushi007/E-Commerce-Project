@@ -1,0 +1,146 @@
+<%- include('header') %>
+            <!-- partial -->
+            <div class="main-panel">
+                <div class="content-wrapper">
+                    <div class="row">
+                        <div class=" grid-margin stretch-card">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4 class="card-title">Basic Table</h4>
+                                    
+                                        <p class="card-description alert alert-success">
+                                            <%= flash.success %>
+                                        </p>
+                                   
+                                    <div class="table-responsive">
+                                        <form action="">
+                                            <input type="text" name="search"><input type="submit" name="searching"
+                                                id="">
+                                        </form>
+                                    <form action="/addCategory/multipleDelete" method="post">
+                                        <table class="table">
+                                            <thead>
+                                                <tr>
+                                                    <th><input type="checkbox" id="selectall" class="css-checkbox " name="selectall"/><button type="submit">Delete All</button></th>
+                                                    <th></th>
+                                                    <th>productName</th> 
+                                                    <th>oldPrice</th> 
+                                                    <th>price</th> 
+                                                    <th>rating</th> 
+                                                    <th>image</th> 
+                                                    <th>description</th> 
+                                                    <th>color</th> 
+                                                    <th>CreatedDate</th>
+                                                    <th>Status</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <% for(var p of productData) {%>
+                                                    <tr>
+                                                        <td><input type="checkbox" name="deactiveRecord[]" class="checkboxall" value="<%= p.id %>"/></td>
+                                                        
+                                                        <td><a href="" class="fa fa-trash"></a></td>
+                                                        <td>
+                                                            <%= p.porductName %>
+                                                        </td>
+                                                        
+                                                        <td>
+                                                            <%= p.oldPrice %>
+                                                        </td>
+                                                        <td>
+                                                            <%= p.price %>
+                                                        </td>
+                                                        <td>
+                                                            <%= p.rating %>
+                                                        </td>
+                                                        <td>
+                                                            <img src="<%= p.image %>" alt="" height="100" width="100">
+                                                        </td>
+                                                        <td>
+                                                            <%= p.description %>
+                                                        </td>
+                                                        <td>
+                                                            <%= p.color %>
+                                                        </td>
+                                                        <td>
+                                                            <%= p.createdDate %>
+                                                        </td>
+                                                        <td><label class="badge">
+                                                                <% if(p.isActive==true) { %>
+                                                                    <a class="badge-success" href="/addCategory/active/<%= p.id %>">Active</a>
+                                                                    
+                                                                    <% } else {%>
+                                                                        <a class="badge-danger" href="/addCategory/deactive/<%= p.id %>">Deactive</a>
+                                                                      
+                                                                        <% } %>
+                                                            </label>
+                                                        </td>
+                                                    </tr>
+                                                    <% }%>
+                                                    <tr>
+                                                        <td colspan="6">
+                                                        <% for(var i=1; i<=totalPage; i++) { %>
+                                                            <a href="?page=<%= i %>&search=<%= searchData %>"><%= i %></a>
+                                                        <% } %>
+                                                        </td>
+                                                    </tr>
+                                            </tbody>
+                                        </table>
+                                    </form>    
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- content-wrapper ends -->
+                <!-- partial:../../partials/_footer.html -->
+                <footer class="footer">
+                    <div class="d-sm-flex justify-content-center justify-content-sm-between">
+                        <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright ©
+                            bootstrapdash.com 2020</span>
+                        <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"> Free <a
+                                href="https://www.bootstrapdash.com/" target="_blank">Bootstrap dashboard templates</a>
+                            from Bootstrapdash.com</span>
+                    </div>
+                </footer>
+                <!-- partial -->
+            </div>
+            <!-- main-panel ends -->
+        </div>
+        <!-- page-body-wrapper ends -->
+    </div>
+    <!-- container-scroller -->
+    <!-- base:js -->
+    <script src="../../vendors/base/vendor.bundle.base.js"></script>
+    <!-- endinject -->
+    <!-- Plugin js for this page-->
+    <!-- End plugin js for this page-->
+    <!-- inject:js -->
+    <script src="../../js/off-canvas.js"></script>
+    <script src="../../js/hoverable-collapse.js"></script>
+    <script src="../../js/template.js"></script>
+    <script>
+        $(document).ready(function () {
+          $("#selectall").click(function () {
+            if (this.checked) {
+              $('.checkboxall').each(function () {
+                $(".checkboxall").prop('checked', true);
+              })
+            } else {
+              $('.checkboxall').each(function () {
+                $(".checkboxall").prop('checked', false);
+              })
+            }
+          });
+        });
+      </script>
+    <!-- endinject -->
+    <!-- plugin js for this page -->
+    <!-- End plugin js for this page -->
+    <!-- Custom js for this page-->
+    <!-- End custom js for this page-->
+</body>
+
+</html>
+<%- include('footer') %>

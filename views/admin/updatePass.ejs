@@ -1,0 +1,41 @@
+<%- include('header') %>
+            <!-- partial -->
+            <div class="main-panel">
+                <div class="content-wrapper">
+                    <div class="row">
+                        <div class="col-12 grid-margin stretch-card">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4 class="card-title">Basic form elements</h4>
+                                    <p class="card-description">
+                                        Basic form elements
+                                    </p>
+                                    <form class="forms-sample" method="post" action="/newPass">
+                                        
+                                        <div class="form-group">
+                                            <label for="exampleInputPassword4">Currunt Password</label>
+                                            <input type="password" class="form-control" name="cpass"
+                                                id="exampleInputPassword4" placeholder="Currunt Password">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="exampleInputPassword4">New Password</label>
+                                            <input type="password" class="form-control" name="npass"
+                                                id="exampleInputPassword4" placeholder="New Password">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="exampleInputPassword4">Confirm Password</label>
+                                            <input type="password" class="form-control" name="copass"
+                                                id="exampleInputPassword4" placeholder="Confirm Password">
+                                        </div>
+                                       
+
+                                        <input type="submit" class="btn btn-primary mr-2" name="submit" id="">
+
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
+                        <%- include('footer') %>

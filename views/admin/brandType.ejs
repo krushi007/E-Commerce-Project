@@ -1,0 +1,16 @@
+<select name="brandId" id="brandId">
+    <option value="">--select--</option>
+    <% for(var b of brandData) {%>
+        <option value="<%=b.id%>">
+            <%=b.brandName%>
+        </option>
+        <% }%>
+</select>
+<select name="typeId" id="typeId">
+    <option value="">--select--</option>
+    <% for(var t of typeData) {%>
+        <option value="<%=t.id%>">
+            <%=t.typeName%>
+        </option>
+        <% }%>
+</select>
